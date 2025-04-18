@@ -17,7 +17,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   
   const fetchProjects = () => {
-    axios.get("http://127.0.0.1:8000/projects", {
+    axios.get("https://ahmedqonswa.railway.app/about/", {
       headers: {
         "Accept": "application/json",
       }
