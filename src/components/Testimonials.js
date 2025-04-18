@@ -22,7 +22,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   const fetchTestimonials = () => {
-    axios.get("https://ahmedqonswa.railway.app/about/", {
+    axios.get("https://ahmedqonswa.railway.app/testimonials/", {
       headers: {
         "Accept": "application/json"
       }
