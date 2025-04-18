@@ -15,7 +15,7 @@ const Technologies = () => {
   const [technologies, setTechnologies] = useState([]);
   
   const fetchTechnologies = () => {
-    axios.get("https://ahmedqonswa.railway.app/about/", {
+    axios.get("https://ahmedqonswa.railway.app/technologies/", {
       headers: {
         "Accept": "application/json",
       }
