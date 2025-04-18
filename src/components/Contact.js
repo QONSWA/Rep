@@ -20,7 +20,7 @@ const Contact = () => {
   const [contact, setContact] = useState([]);
   
   const fetchContact = () => {
-    axios.get("http://127.0.0.1:8000/contact", {
+    axios.get("https://ahmedqonswa.railway.app/about/", {
       headers: {
         "Accept": "application/json",
       }
