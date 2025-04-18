@@ -14,7 +14,7 @@ const About = () => {
   const [about, setAbout] = useState([]);
   
   const fetchAbout = () => {
-    axios.get("https://ahmedqonswa.railway.app/about", {
+    axios.get("https://ahmedqonswa.railway.app/about/", {
       headers: {
         "Accept": "application/json"
       }
