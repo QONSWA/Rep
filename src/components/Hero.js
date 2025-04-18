@@ -22,7 +22,7 @@ const Hero = () => {
   const [hero, setHero] = useState([]);
   
   const fetchHero = () => {
-    axios.get("https://ahmedqonswa.railway.app/about/", {
+    axios.get("https://ahmedqonswa.railway.app/hero/", {
       headers: {
         "Accept": "application/json",
       }
