@@ -59,7 +59,7 @@ const Technologies = () => {
               marginTop={4}
               marginBottom={6}
             >
-              Technologies I use to build web applications
+              TECHNOLOGIES I USE TO BUILD WEB APPLICATIONS.
             </Typography>
           </Box>
           <Grid container spacing={2}>
