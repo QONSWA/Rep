@@ -41,7 +41,7 @@ const HeroButtons = () => {
             }
           }}
         >
-          Learn More
+          LEARN MORE
         </Button>
         <Box
           marginTop={{ xs: 2, sm: 0 }}
@@ -66,7 +66,7 @@ const HeroButtons = () => {
               }
             }}
           >
-            View My Work
+            VIEW MY WORK
           </Button>
         </Box>
       </Box>
