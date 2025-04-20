@@ -10,17 +10,15 @@ import Typography from "@mui/material/Typography";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useTheme } from "@mui/material/styles";
 
 import Map from "./Map";
 
 const Contact = () => {
   const theme = useTheme();
-  
+
   const [contact, setContact] = useState([]);
-  
+
   const fetchContact = () => {
     axios.get("http://127.0.0.1:8000/contact", {
       headers: {
@@ -32,14 +30,14 @@ const Contact = () => {
     })
     .catch(error => console.log(error));
   };
-  
+
   useEffect(() => {
     fetchContact();
   }, []);
-    
+
   return (
     <div id="contact">
-      <Box 
+      <Box
         position="relative"
         marginBottom={15}
       >
@@ -77,9 +75,9 @@ const Contact = () => {
             <Grid container spacing={3} key={i}>
               <Grid item md={4} xs={12}>
                 <Box marginTop={3} marginBottom={2} justifyContent="center">
-                  <Typography 
-                    variant="h4" 
-                    sx={{ fontWeight: 600 }} 
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: 600 }}
                     gutterBottom
                     alignItems="center"
                   >
@@ -91,7 +89,6 @@ const Contact = () => {
                   flexDirection="column"
                   justifyContent="space-between"
                 >
-                  {/* Phone */}
                   <Box
                     component={ListItem}
                     disableGutters
@@ -115,13 +112,11 @@ const Contact = () => {
                         <PhoneIcon fontSize="small" />
                       </Box>
                     </Box>
-                    <ListItemText 
+                    <ListItemText
                       primary="Phone"
                       secondary={item.phone}
                     />
                   </Box>
-
-                  {/* Email */}
                   <Box
                     component={ListItem}
                     disableGutters
@@ -145,13 +140,11 @@ const Contact = () => {
                         <EmailIcon fontSize="small" />
                       </Box>
                     </Box>
-                    <ListItemText 
+                    <ListItemText
                       primary="Email"
                       secondary={item.email}
                     />
                   </Box>
-
-                  {/* Location */}
                   <Box
                     component={ListItem}
                     disableGutters
@@ -174,77 +167,17 @@ const Contact = () => {
                         <LocationIcon fontSize="small" />
                       </Box>
                     </Box>
-                    <ListItemText 
+                    <ListItemText
                       primary="Location"
-                      secondary={item.address} 
-                    />
-                  </Box>
-
-                  {/* Instagram */}
-                  <Box
-                    component={ListItem}
-                    disableGutters
-                    width="auto"
-                    padding={0}
-                    marginBottom={3}
-                  >
-                    <Box
-                      component={ListItemAvatar}
-                      minWidth="auto !important"
-                      marginRight={2}
-                    >
-                      <Box
-                        component={Avatar}
-                        width={50}
-                        height={50}
-                        backgroundColor={theme.palette.primary.main}
-                        color={theme.palette.common.white}
-                      >
-                        <InstagramIcon fontSize="small" />
-                      </Box>
-                    </Box>
-                    <ListItemText 
-                      primary="Instagram"
-                      secondary={item.instagram}
-                    />
-                  </Box>
-
-                  {/* LinkedIn */}
-                  <Box
-                    component={ListItem}
-                    disableGutters
-                    width="auto"
-                    padding={0}
-                    marginBottom={3}
-                  >
-                    <Box
-                      component={ListItemAvatar}
-                      minWidth="auto !important"
-                      marginRight={2}
-                    >
-                      <Box
-                        component={Avatar}
-                        width={50}
-                        height={50}
-                        backgroundColor={theme.palette.primary.main}
-                        color={theme.palette.common.white}
-                      >
-                        <LinkedInIcon fontSize="small" />
-                      </Box>
-                    </Box>
-                    <ListItemText 
-                      primary="LinkedIn"
-                      secondary={item.linkedin}
+                      secondary={item.address}
                     />
                   </Box>
                 </Box>
               </Grid>
-
-              {/* Map */}
               <Grid item md={8} xs={12}>
-                <Map 
-                  coordinates={[item.latitude, item.longitude]} 
-                  zoom={13} 
+                <Map
+                  coordinates={[item.latitude, item.longitude]}
+                  zoom={13}
                 />
               </Grid>
             </Grid>
