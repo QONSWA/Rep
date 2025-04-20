@@ -20,7 +20,7 @@ const Contact = () => {
   const [contact, setContact] = useState([]);
   
   const fetchContact = () => {
-    axios.get("https://ahmedqonswa.railway.app/contact/", {
+    axios.get("https://ahmedqonswa.up.railway.app/contact/", {
       headers: {
         "Accept": "application/json",
       }
