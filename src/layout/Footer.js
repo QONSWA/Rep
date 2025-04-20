@@ -17,7 +17,7 @@ const Footer = () => {
   const [footer, setFooter] = useState([]);
   
   const fetchFooter = () => {
-    axios.get("https://ahmedqonswa.railway.app/footer/", {
+    axios.get("https://ahmedqonswa.up.railway.app/footer/", {
       headers: {
         "Accept": "application/json",
       }
