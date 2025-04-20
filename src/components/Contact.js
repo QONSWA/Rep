@@ -23,7 +23,7 @@ const Contact = () => {
 
   const fetchContact = () => {
     axios
-      .get("http://127.0.0.1:8000/contact", {
+      .get("https://ahmedqonswa.vercel.app/contact/", {
         headers: {
           Accept: "application/json",
         },
