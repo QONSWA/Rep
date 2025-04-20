@@ -63,7 +63,7 @@ const Sidebar = ({ open, onClose }) => {
                   flexGrow={1}
                   marginLeft="10px"
                 >
-                  Bob Developer
+                  Ahmed Qonswa
                 </Typography>
               </IconButton>
             </Link>
@@ -105,19 +105,10 @@ const Sidebar = ({ open, onClose }) => {
             </Box>
             <Box>
               <Stack direction="row" spacing={1}>
-                <IconButton 
-                  aria-label="YouTube" 
-                  href="#"
-                  target="_blank"
-                  sx={{ 
-                    color: theme.palette.primary.main,
-                  }}
-                >
-                  <YouTubeIcon fontSize="large" />
-                </IconButton>
+                
                 <IconButton 
                   aria-label="LinkedIn" 
-                  href="#"
+                  href="https://www.linkedin.com/in/ahmed-qonswa-a6a06a212/"
                   target="_blank"
                   sx={{ 
                     color: theme.palette.primary.main,
@@ -127,7 +118,7 @@ const Sidebar = ({ open, onClose }) => {
                 </IconButton>
                 <IconButton 
                   aria-label="Instagram" 
-                  href="#"
+                  href="https://www.instagram.com/ahmedqonswa22/"
                   target="_blank"
                   sx={{ 
                     color: theme.palette.primary.main,
