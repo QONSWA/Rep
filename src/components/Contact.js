@@ -68,7 +68,7 @@ const Contact = () => {
               marginTop={4}
               marginBottom={6}
             >
-              Do you need a Backend web developer? I would love to hear from you.
+              DO YOU NEED A BACKEND WEB DEVELOPER? I WOULD LOVE TO HEAR FROM YOU.
             </Typography>
           </Box>
           {contact.slice(0, 1).map((item, i) => (
