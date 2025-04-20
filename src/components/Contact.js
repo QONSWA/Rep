@@ -182,19 +182,19 @@ const Contact = () => {
                         backgroundColor={theme.palette.primary.main}
                         color={theme.palette.common.white}
                       >
-                        <InstagramIcon fontSize="small" />
+                        <FacebookIcon fontSize="small" />
                       </Box>
                     </Box>
                     <ListItemText
-                      primary="Instagram"
+                      primary="Facebook"
                       secondary={
                         <a
-                          href="https://www.instagram.com/ahmedqonswa22/"
+                          href="https://www.facebook.com/ahmedqonswa22/"
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ color: "inherit", textDecoration: "none" }}
                         >
-                          @ahmedqonswa22
+                          Ahmed Qonswa
                         </a>
                       }
                     />
