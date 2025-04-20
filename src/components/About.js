@@ -58,7 +58,7 @@ const About = () => {
               marginTop={4}
               marginBottom={6}
             >
-              I am a software enginner who builds elegant, fast, and scalable web applications
+              I AM A SOFTWARE ENGINEER WHO BUILDS ELEGANT, FAST, AND SCALABLE WEB APPLICATIONS.
             </Typography>
           </Box>
           <Grid container spacing={4}>
