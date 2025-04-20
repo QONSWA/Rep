@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useTheme } from "@mui/material/styles";
 
 import Map from "./Map";
@@ -20,15 +22,16 @@ const Contact = () => {
   const [contact, setContact] = useState([]);
 
   const fetchContact = () => {
-    axios.get("http://127.0.0.1:8000/contact", {
-      headers: {
-        "Accept": "application/json",
-      }
-    })
-    .then(response => {
-      setContact(response.data);
-    })
-    .catch(error => console.log(error));
+    axios
+      .get("http://127.0.0.1:8000/contact", {
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then((response) => {
+        setContact(response.data);
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -37,10 +40,7 @@ const Contact = () => {
 
   return (
     <div id="contact">
-      <Box
-        position="relative"
-        marginBottom={15}
-      >
+      <Box position="relative" marginBottom={15}>
         <Box
           maxWidth={{ sm: 720, md: 1236 }}
           width={1}
@@ -112,10 +112,7 @@ const Contact = () => {
                         <PhoneIcon fontSize="small" />
                       </Box>
                     </Box>
-                    <ListItemText
-                      primary="Phone"
-                      secondary={item.phone}
-                    />
+                    <ListItemText primary="Phone" secondary={item.phone} />
                   </Box>
                   <Box
                     component={ListItem}
@@ -140,10 +137,7 @@ const Contact = () => {
                         <EmailIcon fontSize="small" />
                       </Box>
                     </Box>
-                    <ListItemText
-                      primary="Email"
-                      secondary={item.email}
-                    />
+                    <ListItemText primary="Email" secondary={item.email} />
                   </Box>
                   <Box
                     component={ListItem}
@@ -167,18 +161,84 @@ const Contact = () => {
                         <LocationIcon fontSize="small" />
                       </Box>
                     </Box>
+                    <ListItemText primary="Location" secondary={item.address} />
+                  </Box>
+                  <Box
+                    component={ListItem}
+                    disableGutters
+                    width="auto"
+                    padding={0}
+                    marginBottom={3}
+                  >
+                    <Box
+                      component={ListItemAvatar}
+                      minWidth="auto !important"
+                      marginRight={2}
+                    >
+                      <Box
+                        component={Avatar}
+                        width={50}
+                        height={50}
+                        backgroundColor={theme.palette.primary.main}
+                        color={theme.palette.common.white}
+                      >
+                        <InstagramIcon fontSize="small" />
+                      </Box>
+                    </Box>
                     <ListItemText
-                      primary="Location"
-                      secondary={item.address}
+                      primary="Instagram"
+                      secondary={
+                        <a
+                          href="https://www.instagram.com/ahmedqonswa22/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                          @ahmedqonswa22
+                        </a>
+                      }
+                    />
+                  </Box>
+                  <Box
+                    component={ListItem}
+                    disableGutters
+                    width="auto"
+                    padding={0}
+                    marginBottom={3}
+                  >
+                    <Box
+                      component={ListItemAvatar}
+                      minWidth="auto !important"
+                      marginRight={2}
+                    >
+                      <Box
+                        component={Avatar}
+                        width={50}
+                        height={50}
+                        backgroundColor={theme.palette.primary.main}
+                        color={theme.palette.common.white}
+                      >
+                        <LinkedInIcon fontSize="small" />
+                      </Box>
+                    </Box>
+                    <ListItemText
+                      primary="LinkedIn"
+                      secondary={
+                        <a
+                          href="https://www.linkedin.com/in/ahmed-qonswa-a6a06a212/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                          Ahmed Qonswa
+                        </a>
+                      }
                     />
                   </Box>
                 </Box>
               </Grid>
               <Grid item md={8} xs={12}>
-                <Map
-                  coordinates={[item.latitude, item.longitude]}
-                  zoom={13}
-                />
+                <Map coordinates={[item.latitude, item.longitude]} zoom={13} />
               </Grid>
             </Grid>
           ))}
