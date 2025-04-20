@@ -10,6 +10,10 @@ import Typography from "@mui/material/Typography";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import { useTheme } from "@mui/material/styles";
 
 import Map from "./Map";
@@ -20,7 +24,7 @@ const Contact = () => {
   const [contact, setContact] = useState([]);
   
   const fetchContact = () => {
-    axios.get("https://ahmedqonswa.up.railway.app/contact/", {
+    axios.get("http://127.0.0.1:8000/contact", {
       headers: {
         "Accept": "application/json",
       }
@@ -37,10 +41,7 @@ const Contact = () => {
     
   return (
     <div id="contact">
-      <Box 
-        position="relative"
-        marginBottom={15}
-      >
+      <Box position="relative" marginBottom={15}>
         <Box
           maxWidth={{ sm: 720, md: 1236 }}
           width={1}
@@ -68,7 +69,7 @@ const Contact = () => {
               marginTop={4}
               marginBottom={6}
             >
-              DO YOU NEED A BACKEND WEB DEVELOPER? I WOULD LOVE TO HEAR FROM YOU.
+              Do you need a Backend web developer? I would love to hear from you.
             </Typography>
           </Box>
           {contact.slice(0, 1).map((item, i) => (
@@ -117,6 +118,7 @@ const Contact = () => {
                       secondary={item.phone}
                     />
                   </Box>
+
                   <Box
                     component={ListItem}
                     disableGutters
@@ -145,6 +147,7 @@ const Contact = () => {
                       secondary={item.email}
                     />
                   </Box>
+
                   <Box
                     component={ListItem}
                     disableGutters
@@ -172,13 +175,35 @@ const Contact = () => {
                       secondary={item.address} 
                     />
                   </Box>
+
+                  {/* LinkedIn & Instagram Icons */}
+                  <Box display="flex" flexDirection="row" gap={2} marginLeft={1}>
+                    <Tooltip title="LinkedIn Profile" arrow>
+                      <IconButton 
+                        aria-label="LinkedIn" 
+                        href="https://www.linkedin.com/in/ahmed-qonswa-a6a06a212/"
+                        target="_blank"
+                        sx={{ color: theme.palette.primary.main }}
+                      >
+                        <LinkedInIcon fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Instagram Profile" arrow>
+                      <IconButton 
+                        aria-label="Instagram" 
+                        href="https://www.instagram.com/ahmedqonswa22?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"
+                        sx={{ color: theme.palette.primary.main }}
+                      >
+                        <InstagramIcon fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
                 </Box>
               </Grid>
+
               <Grid item md={8} xs={12}>
-                <Map 
-                  coordinates={[item.latitude, item.longitude]} 
-                  zoom={13} 
-                />
+                <Map coordinates={[item.latitude, item.longitude]} zoom={13} />
               </Grid>
             </Grid>
           ))}
