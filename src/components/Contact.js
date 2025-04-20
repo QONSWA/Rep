@@ -23,7 +23,7 @@ const Contact = () => {
 
   const fetchContact = () => {
     axios
-      .get("https://ahmedqonswa.vercel.app/contact/", {
+      .get("https://ahmedqonswa.up.railway.app/contact/", {
         headers: {
           Accept: "application/json",
         },
