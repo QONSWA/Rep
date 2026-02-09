@@ -25,7 +25,7 @@ const Contact = () => {
 
   const fetchContact = () => {
     axios
-      .get("https://ahmedqonswa.up.railway.app/contact/", {
+      .get("web-production-e5d4e.up.railway.app/contact/", {
         headers: {
           Accept: "application/json",
         },
